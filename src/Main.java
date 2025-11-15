@@ -1,46 +1,38 @@
-import java.util.InputMismatchException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
+
+
 
 public class Main {
     public static void main(String[] args) {
-        // 1. Library 클래스의 인스턴스(실제 객체)를 생성
-        Scanner sc = new Scanner(System.in);
-        Library Library = new Library();
 
-        // 2. Library 객체의 addBook 메소드를 사용해 책 추가
-        Library.addBook(new Book("어린왕자", "생택쥐페리", "N"));
-        Library.addBook(new Book("삼체", "류츠신", "N"));
-        Library.addBook(new Book("자바의정석", "김기용", "N"));
+        //속성 Filed
+        //기본적인 3권의 책 리스트 를 만들기
+        List<Book> bookList = new ArrayList<>();
 
-        // 3. Library 객체의 메소드를 호출해 기능 사용
-        while (true) {
-            System.out.println("세진 도서관에 오신것을 환영합니다. \n " +
-                    "-------------------\n " +
-                    "1. 보유 한 책 목록 조회 \n " +
-                    "2. 반납하기 \n " +
-                    "3. 프로그램 종료 ");
-            int selectNumber = sc.nextInt();
-            if (selectNumber == 1) {
-                Library.printAllBookTitles();
-                System.out.println("대여할 책 번호를 선택해주세요");
-                int rentalBookNumber = sc.nextInt();
-              /*  Library.bookRentalFunction();*/
+        Book book1 = new Book("수학책", "수학선생님", "대여 가능");
+        Book book2 = new Book("국어책", "국어선생님", "대여 가능");
+        Book book3 = new Book("자바책", "김기용선생님", "대여 가능");
 
-            } else if (selectNumber == 2) {
-                /*Library.bookRentalFunction();*/
-            } else if (selectNumber == 3) {
-                return;
-            }
-                try {
-                    if (selectNumber < 1 || selectNumber > 3) {
-                        throw new IllegalAccessException();
-                    }
-                }
-                    catch(Exception e){
-                    System.out.println("잘못된 입력값입니다.");
-                }
+        bookList.add(book1);
+        bookList.add(book2);
+        bookList.add(book3);
 
-            }
-        }
+
+        //기능 Method
+
+        //Library 클래스에서 실행하기위한 메소드  bookList를 주입하여 생성한다.
+        Library library = new Library(bookList);
+        library.start();
+
     }
+}
+
+
+
+
+
+
 
