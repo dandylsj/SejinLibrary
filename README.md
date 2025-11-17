@@ -26,6 +26,8 @@
 <br>
 
 ## 실행 화면
+움직이는 GIF 이며 안움직일 경우 클릭하시면 움직입니다.
+
 ![책 추가기능 시연](https://github.com/user-attachments/assets/386592f9-09c9-4387-ae53-b92563b2a260)
 
 ![책 대여기능](https://github.com/user-attachments/assets/70b250b6-9725-49df-8e99-2d0e359968e1)
