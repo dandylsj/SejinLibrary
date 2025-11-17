@@ -25,8 +25,6 @@ public class Library {
                     "원하시는 메뉴의 번호를 누르면 이동합니다. \n" +
                     "1.책 목록조회\n2.책 대여하기\n3.책 반납하기\n4.책 등록하기\n5.종료");
 
-            System.out.println(bookList.get(0).getTitle());
-
             int selectMenuNumber = sc.nextInt(); //입력한 숫자를 저장
             switch (selectMenuNumber) { //입력한 숫자의 번호에 맞는 메뉴를 실행하기 위한 스위치구문
                 case (1):
