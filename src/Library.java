@@ -25,6 +25,8 @@ public class Library {
                     "원하시는 메뉴의 번호를 누르면 이동합니다. \n" +
                     "1.책 목록조회\n2.책 대여하기\n3.책 반납하기\n4.책 등록하기\n5.종료");
 
+            System.out.println(bookList.get(0).getTitle());
+
             int selectMenuNumber = sc.nextInt(); //입력한 숫자를 저장
             switch (selectMenuNumber) { //입력한 숫자의 번호에 맞는 메뉴를 실행하기 위한 스위치구문
                 case (1):
@@ -79,8 +81,6 @@ public class Library {
                 } else if (bookList.get(selectBookNumber - 1).getRentalStatus().equals("대여 가능")) { //if 문을 사용하여 현재 선택한 책 목록의 리스트에 rentalStatus의 글자와 비교하여 같으면
                     System.out.println("🚨이미 반납한 책입니다.🚨 \n");
                     continue;// 다시 책목록 출력으로 돌아감
-                }else if(selectBookNumber == 0) {
-                    break;
                 }
             } catch (IndexOutOfBoundsException e) {
                 System.out.println("🚨선택한 책은 없는 책입니다. 다시 입력해주세요🚨");
