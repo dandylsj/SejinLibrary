@@ -67,7 +67,7 @@ public class Library {
     public void bookReturn() {
         while (true) {
             bookListInquiry(); //책 목록 출력
-            System.out.println("\n" + "해당 책의 숫자를 누르면 대여가 가능합니다. \n0번을 누르면 상위메뉴로 돌아갑니다.");
+            System.out.println("\n" + "해당 책의 숫자를 누르면 '반납'이 가능합니다. \n0번을 누르면 상위메뉴로 돌아갑니다.");
             int selectBookNumber = sc.nextInt();//해당 책 목록의 번호를 입력하면 대여 , 반납이 가능
             if (selectBookNumber == 0){ //모두 반납한 상태에서 메뉴를 빠져나올수 없어서 상위 메뉴로 나가는 기능 추가
                 break;
@@ -101,7 +101,7 @@ public class Library {
     public void bookRental () {
         while (true) { //메뉴를 반복하기위한 반복문
             bookListInquiry();//책 목록 출력
-            System.out.println("\n" + "해당 책의 숫자를 누르면 대여가 가능합니다. \n0번을 누르면 상위메뉴로 돌아갑니다.");
+            System.out.println("\n" + "해당 책의 숫자를 누르면 '대여'가 가능합니다. \n0번을 누르면 상위메뉴로 돌아갑니다.");
             int selectBookNumber = sc.nextInt();//해당 책 목록의 번호를 입력하면 대여 , 반납이 가능
             if (selectBookNumber == 0){ //모두 대여한 상태에서 메뉴를 빠져나올수 없어서 상위 메뉴로 나가는 기능 추가
                 break;
@@ -112,7 +112,7 @@ public class Library {
                     //어떤 책을 빌렸는지에 대한 안내문 출력
                     System.out.println("📖알림:" + bookList.get(selectBookNumber - 1).getTitle() + " | " + bookList.get(selectBookNumber - 1).getAuthor() + "를 대여 하였습니다.\n");
                 } else if (bookList.get(selectBookNumber - 1).getRentalStatus().equals("대여 불가")) { //if 문을 사용하여 현재 선택한 책 목록의 리스트에 rentalStatus의 글자와 비교하여 같으면
-                    System.out.println("🚨이미 반납한 책입니다.🚨 \n");
+                    System.out.println("🚨이미 대여한 책입니다.🚨 \n");
                     continue; // 다시 책목록 출력으로 돌아감
                 }
             } catch (IndexOutOfBoundsException e) {
